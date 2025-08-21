@@ -1,0 +1,14 @@
+{
+  "name": "clienthttp",
+  "version": "1.0.0",
+  "description": "A simple HTTP client to make GET requests to a server.",
+  "main": "src/client.js",
+  "scripts": {
+    "start": "node src/client.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
