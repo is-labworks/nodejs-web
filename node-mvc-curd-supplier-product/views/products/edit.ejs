@@ -12,6 +12,10 @@
     <input name="price" type="number" class="form-control" value="<%= product.price %>" required>
   </div>
   <div class="mb-3">
+    <label class="form-label">Quantity</label>
+    <input name="quantity" type="number" class="form-control" value="<%= product.quantity %>" required>
+  </div>
+  <div class="mb-3">
     <label class="form-label">Supplier</label>
     <select name="supplierId" class="form-control" required>
       <% suppliers.forEach(supplier => { %>

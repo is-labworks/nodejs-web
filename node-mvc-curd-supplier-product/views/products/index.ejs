@@ -6,22 +6,35 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Name</th><th>Price</th><th>Supplier</th><th>Actions</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Supplier</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% products.forEach(product => { %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-       <td><%= product.supplierId ? product.supplierId.name : 'N/A' %></td>
-        <td>
-          <a href="/products/<%= product._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
-          <form method="POST" action="/products/<%= product._id %>/delete" style="display:inline;">
-            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-          </form>
-        </td>
-      </tr>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.supplierId ? product.supplierId.name : 'N/A' %></td>
+      <td>
+        <a
+          href="/products/<%= product._id %>/edit"
+          class="btn btn-warning btn-sm"
+          >Edit</a
+        >
+        <form
+          method="POST"
+          action="/products/<%= product._id %>/delete"
+          style="display: inline"
+        >
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        </form>
+      </td>
+    </tr>
     <% }) %>
   </tbody>
 </table>

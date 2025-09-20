@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<h1>Login</h1>
+<form method="POST" action="/login">
+  <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input name="username" type="text" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input name="password" type="password" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  <a href="/register" class="btn btn-link">Register</a> |
+  <a href="/forgot-password" class="btn btn-link">Forgot password?</a>
+</form>
+
+<%- include('../partials/footer') %>
