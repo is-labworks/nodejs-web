@@ -1,0 +1,26 @@
+<!-- filepath: views/products/edit.ejs -->
+<%- include('../partials/header') %>
+
+<h1>Edit Product</h1>
+<form method="POST" action="/products/<%= product._id %>">
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input name="name" class="form-control" value="<%= product.name %>" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input name="price" type="number" class="form-control" value="<%= product.price %>" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Supplier</label>
+    <select name="supplierId" class="form-control" required>
+      <% suppliers.forEach(supplier => { %>
+        <option value="<%= supplier._id %>" <%= supplier._id.equals(product.supplierId) ? 'selected' : '' %>><%= supplier.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <button class="btn btn-primary" type="submit">Update</button>
+  <a href="/products" class="btn btn-secondary">Cancel</a>
+</form>
+
+<%- include('../partials/footer') %>
